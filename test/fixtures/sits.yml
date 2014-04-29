@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-04-28
+  start_time: 2014-04-28 16:55:15
+  end_time: 2014-04-28 16:55:15
+  status: MyString
+  family_id: 1
+  sitter_id: 1
+
+two:
+  date: 2014-04-28
+  start_time: 2014-04-28 16:55:15
+  end_time: 2014-04-28 16:55:15
+  status: MyString
+  family_id: 1
+  sitter_id: 1
