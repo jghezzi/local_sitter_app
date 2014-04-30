@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Local Sitter App
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+  .navbar.navbar-default
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Sitters", sitters_path
+        %li= link_to "Families", families_path
+        / %li= link_to "Sits", sits_path
+        / %li= link_to "Kids", kids_path
+%br
+%br
+%br
+= yield

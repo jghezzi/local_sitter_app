@@ -1,0 +1,6 @@
+.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+  - @sitters.each do |sitter|
+    = link_to sitter.name, sitter_path(sitter)
+    %p= sitter.rate
+
+  = link_to 'New Sitters', new_sitter_path, class: "btn btn-default"
