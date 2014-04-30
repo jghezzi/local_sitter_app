@@ -1,0 +1,15 @@
+- @sits.each do |s|
+		Date of sit:
+		= s.date
+		%br
+		Start time:
+		= s.start_time
+		%br
+		End time:
+		= s.end_time
+		%br
+		Status:
+		= s.status
+
+		= button_to "Edit", edit_sit_path(s), method: :get
+		= button_to "Delete", sit_path(s), method: :delete

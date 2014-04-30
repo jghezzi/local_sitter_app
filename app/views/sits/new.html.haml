@@ -1,0 +1,11 @@
+= form_for @new_sit, url: "/sits" do |s|
+	= s.label "Date of sit"
+	= s.date_field :date
+	= s.label "Start Time"
+	= s.time_field :start_time
+	= s.label "End Time"
+	= s.time_field :end_time
+	= s.label "Status"
+	= s.text_field :status
+
+	= s.submit "Add"
