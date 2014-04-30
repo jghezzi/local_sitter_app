@@ -1,0 +1,9 @@
+.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+  = link_to 'New Family', new_family_path, class: "btn btn-default"
+
+.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+  - @families.each do |family|
+    = link_to family.name, family_path(family)
+
+
+ 
