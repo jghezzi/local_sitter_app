@@ -1,0 +1,6 @@
+%div(class="container-fluid form-new")
+	%h2 kids edit page
+	= simple_form_for(@kid, html: {class: 'form-vertical'}, url: "/kids", method: :post) do |n|
+		= render "form", n: n
+
+	%br

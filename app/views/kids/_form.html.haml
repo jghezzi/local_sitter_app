@@ -1,0 +1,18 @@
+= n.label "What's the Little Angel's name?"
+= n.text_field :name
+%br
+= n.label "How old is little tyke?"
+= n.text_field :name
+%br
+= n.label "And this would be a boy or a girl?"
+= n.text_field :gender
+%br
+= n.label "What info would a sitter need to know about your child?"
+= n.text_area :comments
+%br
+= n.label "Family ID"
+= n.number_field :family_id
+%br
+= n.submit "Enter"
+
+/ = button_to "Submit", kids_path, method: :post
