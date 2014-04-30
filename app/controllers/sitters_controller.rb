@@ -26,6 +26,11 @@ class SittersController < ApplicationController
 		@sitter.update_attributes(sitter_params)
 		redirect_to sitters_path
 	end
+	def destroy
+		@sitter = Sitter.find(params[:id])
+		@sitter.destroy
+		redirect_to sitters_path
+	end
 	private
 	def sitter_params
 		params.require(:sitter).permit!
