@@ -1,0 +1,15 @@
+= render 'nav_bar'
+.container
+	.row
+		.col-md-2
+			%h5 Name of the Sitter
+		.col-md-2
+			%h5 Rate in $/hr
+	.row
+		.col-md-2
+			%p= @sitter.name
+		.col-md-2
+			%p= @sitter.rate
+	.row	
+		.col-md-2
+	= button_to 'Back', sitters_path, method: "get"

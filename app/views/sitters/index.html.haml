@@ -1,0 +1,19 @@
+= render 'nav_bar'
+.container
+	.row
+		.col-md-5
+			%table.table.table-striped.table-hover
+				%thead
+					%tr
+						%th #
+						%th Name
+						%th Rate
+				%tbody
+				- @sitters.each do |f|
+					%tr
+						%td= f.id
+						%td= f.name
+						%td= f.rate
+						%td= link_to 'Show', sitter_path(f), method: "get"
+						%td= link_to 'Edit', edit_sitter_path(f)
+						%td= link_to 'Delete', sitter_path(f), :method => :delete, :data => { :confirm => 'Are you sure?' }

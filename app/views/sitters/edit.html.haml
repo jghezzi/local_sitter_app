@@ -1,0 +1,6 @@
+= render 'nav_bar'
+.container
+	.row
+		%h5 Update Babysitter Information
+		= form_for @sitter, url: "/sitters/#{@sitter.id}" do |f|
+			= render 'form', f: f

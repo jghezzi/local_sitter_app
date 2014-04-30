@@ -1,0 +1,21 @@
+= render 'nav_bar'
+.container
+  %h1 Index
+  .row
+    .col-md-4
+      %table.table.table-striped.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Address
+        %tbody
+        - @families.each do |f|
+          %tr
+            %td= f.id
+            %td= f.name
+            %td= f.address
+            %td= link_to 'Edit', edit_family_path(f)
+            %td= link_to 'Delete', family_path(f), :method => :delete, :data => { :confirm => 'Are you sure?' }
+            
+        
