@@ -1,1 +1,27 @@
-index.html.haml
+= render 'nav_bar'
+.container
+	.row
+		.col-md-12
+			%table.table.table-striped.table-hover
+				%thead
+					%tr
+						%th #
+						%th Status
+						%th Date
+						%th Starting Time
+						%th Ending Time
+						%th Requesting Family
+						%th Baby Sitter
+				%tbody
+				- @sits.each do |f|
+					%tr
+						%td= f.id
+						%td= f.status
+						%td= f.date
+						%td= f.start_time
+						%td= f.end_time
+						%td= f.family_id
+						%td= f.sitter_id
+						%td= link_to 'Show', sit_path(f)
+						%td= link_to "Edit", edit_sit_path(f)
+						%td= link_to 'Delete', sit_path(f), :method => :delete, :data => { :confirm => 'Are you sure?' }

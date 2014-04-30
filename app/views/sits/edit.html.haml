@@ -1,1 +1,7 @@
-edit.html.haml
+= render 'nav_bar'
+
+.container
+	.row
+		.col-md-6
+			= form_for @sit, url: "/sits/#{@sit.id}" do |f|
+				= render 'form', f: f

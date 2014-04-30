@@ -1,1 +1,20 @@
-show.html.haml
+= render 'nav_bar'
+.container
+	.row
+		.col-md-8
+			.col-md-2
+				%p= @sit.id
+			.col-md-2
+				%p= @sit.status
+			.col-md-2
+				%p= @sit.date
+			.col-md-2
+				%p= @sit.start_time
+			.col-md-2
+				%p= @sit.end_time
+			.col-md-2
+				%p= @sit.family_id
+			.col-md-2
+				%p= @sit.sitter_id
+	.row
+		= button_to 'Back', sitters_path, method: "get"			
