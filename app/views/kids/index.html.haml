@@ -1,0 +1,32 @@
+%h2 kids index page
+/ %table.table{width: "647"}
+/   %thead
+/     %tr
+/       %th Name
+/       %th Age
+/       %th Gender
+/       %th Comments
+/       %th Family
+/   %tbody      
+/     - @kids.each do |k|
+/       %tr
+/         %td= "Tim"
+/         %td= k.age
+/         %td= k.gender
+/         %td= k.comments
+/         %td= k.family_id
+
+
+     
+    - @kids.each do |k|     
+      label-for:Name
+       "Tim"
+      label-for: age
+      k.age
+      label-for: gender
+      k.gender
+      label-for: comments
+      k.comments
+      k.family_id
+= button_to "Add New Kid", new_kid_path, method: :get
+        
