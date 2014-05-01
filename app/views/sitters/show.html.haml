@@ -1,4 +1,22 @@
-.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
-  .sitter
-    = @sitter.name 
-    = number_to_currency(@sitter.rate)
+%h2 Sitter Details
+.col-lg6.col-md-6.col-sm-6.col-sm-offset-3.col-md-offset-3.col-lg-offset-3
+  %table
+    %tbody
+      %tr
+        %th Name:
+        %th Rate:
+        %th Comments:
+      %tr
+        %td{:width=>"50%"} 
+          = @sitter.name 
+        %td{:width=>"50%"}
+          = number_to_currency(@sitter.rate)
+        %td
+
+  %br
+  %br
+  = link_to 'Edit Sitter', edit_sitter_path(@sitter), class: "btn btn-default green", method: :get
+  %br
+  %br
+  = link_to 'Delete Sitter', sitter_path(@sitter), class: "btn btn-default green", method: :delete
+
