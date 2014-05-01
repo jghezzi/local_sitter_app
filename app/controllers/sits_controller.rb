@@ -48,6 +48,7 @@ class SitsController < ApplicationController
 		@sit = Sit.find(params[:id])
 		if @sit.update_attributes (sit_params)
 			redirect_to sits_path
+		end
 	end
 
 	private

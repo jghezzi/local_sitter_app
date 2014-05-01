@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :sits do
     member do
-      update 'sitter_response_to_sit_request' #like an EDIT for the sitter piece
+      get 'sitter_response_to_sit_request' #like an EDIT for the sitter piece
       put 'sitter_update_to_sit_request' #like an UPDATE for the sitter piece
     end
   end
