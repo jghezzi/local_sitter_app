@@ -21,8 +21,8 @@
       = s.status
       %br
     %br
-    = link_to 'Edit Sit', edit_sit_path(:id), class: "btn btn-default", method: :get
+    = link_to 'Edit Sit', edit_sit_path(s.id), class: "btn btn-default", method: :get
     %br
     %br
-    = link_to 'Delete Sit', sit_path(:id), class: "btn btn-default", method: :delete
+    = link_to 'Delete Sit', sit_path(s), class: "btn btn-default", method: :delete
   

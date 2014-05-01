@@ -1,4 +1,13 @@
+%h2 Family Details
 .col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
-  .family
+  .sitter.green-border
     =@family.name
-
+    =@family.address
+    / need to list kids associated with family
+    / maybe list history of sits & reviews by sitters
+	%br
+  = link_to 'Edit Family', edit_family_path(f.id), class: "btn btn-default", method: :get
+  %br
+  %br
+    
+  
