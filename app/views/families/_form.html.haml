@@ -1,42 +1,30 @@
 = nested_form_for(@family) do |f|
 
-%h2 Add New Family
-.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  %h2 Add New Family
+  .col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
 
-  .panel.form_group
-  = form_for(@family) do |f|
-    = f.label :name
-    = f.text_field :name, class: "form-control"
+    .panel.form_group
+    = form_for(@family) do |f|
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+    %br
+    .panel.form_group
+      = f.fields_for :kids do |i|    
+        = i.label :name
+        = i.text_field :name
 
+        = i.label :age
+        = i.number_field :age
 
-  = f.fields_for :kids do |i|
+        = i.label :gender
+        = i.text_field :gender
 
+        = i.label :comments
+        = i.text_field :comments
+        = i.link_to_remove "Remove this kid"
+      = f.link_to_add "Add a kid", :kids
     %br
     %br
+    = f.submit 'Save', class: "btn bt-default"
     %br
     %br
-  / = f.fields_for :kids do |i|
-
-    
-    .form-inline
-      = i.label :name
-      = i.text_field :name
-
-      = i.label :age
-      = i.number_field :age
-
-
-      = i.label :gender
-      = i.text_field :gender
-      = i.link_to_remove "Remove this kid"
-  = f.link_to_add "Add a kid", :kids
-  %br
-  %br
-  = f.submit 'Save', class: "btn bt-default"
-  %br
-  %br
-
-  /     = i.label :gender
-  /     = i.text_field :gender
-    
-

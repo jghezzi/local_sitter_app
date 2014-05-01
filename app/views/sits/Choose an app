@@ -1,0 +1,22 @@
+Choose an app
+Phase 1 - get all membaers as collabortors and get branches created
+Phase 2 - basic CRUD = divide MVC up
+----
+Phase 3 - Discuss and develop features
+	- get design together
+	- nested form:
+		- families and kids
+	- validation
+
+	- sitter adds available dates, families pick from dates
+		
+		PROCESS:
+	- family sends a request
+	- sitter receives request, the SIT is in SENT status
+	- sitter rejects => that instance UPDATEs to REJECTED status
+	- sitter accepts => that instance UPDATEs to ACCEPTED status
+	- sitter completes => that instance UPDATEs to COMPLETED status
+	- sitter blows it off => that instance UPDATEs to FAILED status
+
+
+Phase 4 - add features by branch, discuss and push
