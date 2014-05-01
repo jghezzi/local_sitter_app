@@ -25,8 +25,10 @@ class FamiliesController < ApplicationController
     end
   end
 
+  private
+
   def family_params
-    params.require(:family).permit(:name)
+    params.require(:family).permit(:name, :kids_attributes => [ :id, :name, :age, :gender, :comments ])
   end
 
 end

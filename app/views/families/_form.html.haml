@@ -1,20 +1,22 @@
-= form_for(@family) do |f|
+= nested_form_for(@family) do |f|
 
   .panel.form_group
     = f.label :name
     = f.text_field :name, class: "form-control"
 
-  / = f.fields_for :kids do |i|
+  = f.fields_for :kids do |i|
     
-  /   .form-inline
-  /     = i.label :name
-  /     = i.text_field :name
+    .form-inline
+      = i.label :name
+      = i.text_field :name
 
-  /     = i.label :age
-  /     = i.number_field :age
+      = i.label :age
+      = i.number_field :age
 
-  /     = i.label :gender
-  /     = i.text_field :gender
+      = i.label :gender
+      = i.text_field :gender
+      = i.link_to_remove "Remove this kid"
+  = f.link_to_add "Add a kid", :kids
   %br
   %br
   = f.submit 'Save', class: "btn bt-default"
