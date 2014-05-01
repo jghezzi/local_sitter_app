@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :sits do
+    member do
+      update 'sitter_response_to_sit_request' #like an EDIT for the sitter piece
+      put 'sitter_update_to_sit_request' #like an UPDATE for the sitter piece
+    end
+  end
+
 
   # You can have the root of your site routed with "root"
   root 'sits#index'
@@ -15,17 +22,19 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :sits
   resources :kids
-  resources :sitters do
 
+  resources :sitters do
     collection do
       get :search
     end
-
   end
 
   resources :families
+
+
+
+
 
   # Example resource route with options:
   #   resources :products do

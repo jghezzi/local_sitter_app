@@ -24,7 +24,7 @@ class SitsController < ApplicationController
 	def update
 		@sit = Sit.find(params[:id])
 		if @sit.update_attributes(sit_params)
-		redirect_to sits_path
+			redirect_to sits_path
 		end
 	end
 
@@ -36,6 +36,18 @@ class SitsController < ApplicationController
 		@sit = Sit.find(params[:id])
 		@sit.destroy
 		redirect_to sits_path
+	end
+
+	#sitter edits sit request to accept
+	def sitter_response_to_sit_request
+		@sit = Sit.find(params[:id])
+	end
+
+	#put / patch request to update table with sitter response
+	def sitter_update_to_sit_request
+		@sit = Sit.find(params[:id])
+		if @sit.update_attributes (sit_params)
+			redirect_to sits_path
 	end
 
 	private
