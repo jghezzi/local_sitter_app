@@ -12,4 +12,5 @@
 		= s.status
 
 		= button_to "Edit", edit_sit_path(s), method: :get
+		= button_to "Accept Sit Request", sitter_response_to_sit_request_sits
 		= button_to "Delete", sit_path(s), method: :delete
