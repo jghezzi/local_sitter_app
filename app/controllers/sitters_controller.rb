@@ -27,7 +27,7 @@ class SittersController < ApplicationController
 
   def update
     @sitter = Sitter.find(params[:id])
-    if @sitter.update
+    if @sitter.update(sitter_params)
       redirect_to sitter_path
     else
       redirect_to edit_sitter_path
