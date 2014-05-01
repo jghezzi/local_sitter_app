@@ -1,6 +1,17 @@
-.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
-  - @sitters.each do |sitter|
-    = link_to sitter.name, sitter_path(sitter)
-    %p= sitter.rate
+%h2 Sitters List
+.col-lg12.col-md-12.col-sm12
+- @sitters.each do |sitter|  
+  .col-lg3.col-md-3.col-sm-3.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+    = link_to sitter.name, sitter_path(sitter), class: "btn btn-default"
+  .col-lg1.col-md-1.col-sm-1.rate
+    = number_to_currency(sitter.rate) 
+    / change table to :decimal, :precision => 4, :scale => 2
+    %br
+    %br
 
-  = link_to 'New Sitters', new_sitter_path, class: "btn btn-default"
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  %hr
+  = link_to 'New Sitters', new_sitter_path, class: "btn btn-default green"
+  %br
+  %br
+  / = link_to 'New Family', new_family_path, class: "btn btn-default green"

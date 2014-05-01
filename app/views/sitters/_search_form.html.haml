@@ -1,0 +1,14 @@
+.col-lg-12.col-md-12.col-sm-12.panel.panel-default.custom_panel.search_box
+  = form_tag search_sitters_path, method: "get" do
+   
+    %br
+    Search sitters by availability date:
+    = date_field_tag "search[date]"
+    %br
+    %h1 AND/OR
+    %br
+    Search sitters by name:
+    = text_field_tag "search[name]"
+    %br
+    %br
+    = submit_tag "Search Sitters"
