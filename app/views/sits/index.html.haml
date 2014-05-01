@@ -1,15 +1,28 @@
-- @sits.each do |s|
-		Date of sit:
-		= s.date
-		%br
-		Start time:
-		= s.start_time
-		%br
-		End time:
-		= s.end_time
-		%br
-		Status:
-		= s.status
-
-		= button_to "Edit", edit_sit_path(s), method: :get
-		= button_to "Delete", sit_path(s), method: :delete
+%h2 Sits List
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  = link_to 'Add New Sit', new_sit_path, class: "btn btn-default green"
+  %br
+  %br
+  - @sits.each do |s|
+    .green-border
+      Date of sit:
+      = s.date
+      %br
+      Start time:
+      = s.start_time
+      %br
+      End time:
+      = s.end_time
+      %br
+      Family:
+      = s.family_id
+      %br
+      Status:
+      = s.status
+      %br
+    %br
+    = link_to 'Edit Sit', edit_sit_path(:id), class: "btn btn-default", method: :get
+    %br
+    %br
+    = link_to 'Delete Sit', sit_path(:id), class: "btn btn-default", method: :delete
+  
