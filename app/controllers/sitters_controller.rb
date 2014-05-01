@@ -47,7 +47,7 @@ class SittersController < ApplicationController
 
   def search
     search_terms = params[:search]
-    @to_dos = Sitter.search(search_terms)
+    @sitters = Sitter.search(search_terms)
     render search_sitters_path
   end
 

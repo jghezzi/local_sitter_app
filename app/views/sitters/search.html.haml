@@ -1,1 +1,7 @@
-search
+- @sitters.each do |s|
+  - if s.present?
+    %p= kickin
+    = link_to s.name, sitter_path(s)
+  - else
+    %p= test
+    %p= There are no sitters yet!
