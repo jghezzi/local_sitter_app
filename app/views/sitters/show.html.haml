@@ -1,4 +1,4 @@
 .col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
   .sitter
     = @sitter.name 
-    = @sitter.rate
+    = number_to_currency(@sitter.rate)

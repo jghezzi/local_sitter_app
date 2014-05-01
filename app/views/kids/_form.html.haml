@@ -1,18 +1,22 @@
-= n.label "What's the Little Angel's name?"
-= n.text_field :name
-%br
-= n.label "How old is little tyke?"
-= n.text_field :name
-%br
-= n.label "And this would be a boy or a girl?"
-= n.text_field :gender
-%br
-= n.label "What info would a sitter need to know about your child?"
-= n.text_area :comments
-%br
-= n.label "Family ID"
-= n.number_field :family_id
-%br
-= n.submit "Enter"
+= form_for(@kid) do |n|
+  .col-lg-8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+    .panel.form_group
+      = n.label "What's the Little Angel's name?"
+      = n.text_field :name, class: "form-control"
 
-/ = button_to "Submit", kids_path, method: :post
+      = n.label "How old is little tyke?"
+      = n.text_field :age, class: "form-control"
+
+      = n.label "And it's gender?"
+      = n.text_field :gender, class: "form-control"
+
+      = n.label "What would a sitter need to know about your child?"
+      = n.text_area :comments, class: "form-control"
+
+      = n.label "Family ID"
+      = n.number_field :family_id, class: "form-control"
+    %br
+    .col-lg-4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+      = n.submit 'Save', class: "btn bt-default"
+    %br
+    %br

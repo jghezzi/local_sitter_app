@@ -1,26 +1,29 @@
-= form_for(@sitter) do |f|
-
+%h2 Add New Sitter
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
   .panel.form_group
-    = f.label :name
-    = f.text_field :name, class: "form-control"
+    = form_for(@sitter) do |f|
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+      %br
+      = f.label :rate
+      = f.text_field :rate, class: "form-control"
+      %br
+      %br
 
-  .panel.form_group
-    = f.label :rate
-    = f.text_field :rate, class: "form-control"
+      .col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+      = f.submit 'Save', class: "btn btn-default"
+      %br
+      %br
 
-  / = f.fields_for :kids do |i|
-    
-  /   .form-inline
-  /     = i.label :name
-  /     = i.text_field :name
 
-  /     = i.label :age
-  /     = i.number_field :age
+/ = f.fields_for :kids do |i|
 
-  /     = i.label :gender
-  /     = i.text_field :gender
-  %br
-  %br
-  = f.submit 'Save', class: "btn bt-default"
-  %br
-  %br
+/   .form-inline
+/     = i.label :name
+/     = i.text_field :name
+
+/     = i.label :age
+/     = i.number_field :age
+
+/     = i.label :gender
+/     = i.text_field :gender
