@@ -1,32 +1,8 @@
-%h2 kids index page
-/ %table.table{width: "647"}
-/   %thead
-/     %tr
-/       %th Name
-/       %th Age
-/       %th Gender
-/       %th Comments
-/       %th Family
-/   %tbody      
-/     - @kids.each do |k|
-/       %tr
-/         %td= "Tim"
-/         %td= k.age
-/         %td= k.gender
-/         %td= k.comments
-/         %td= k.family_id
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  = link_to 'Add New Kid', new_kid_path, class: "btn btn-default"
+
+.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+  - @kids.each do |kid|
+    = link_to kid.name, kid_path(kid)
 
 
-     
-    - @kids.each do |k|     
-      label-for:Name
-       "Tim"
-      label-for: age
-      k.age
-      label-for: gender
-      k.gender
-      label-for: comments
-      k.comments
-      k.family_id
-= button_to "Add New Kid", new_kid_path, method: :get
-        

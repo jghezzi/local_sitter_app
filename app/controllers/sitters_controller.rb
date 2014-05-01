@@ -43,8 +43,15 @@ class SittersController < ApplicationController
     else
       redirect_to :back
     end
-   
   end
+
+  def search
+    search_terms = params[:search]
+    @sitters = Sitter.search(search_terms)
+    render search_sitters_path
+  end
+
+  private
 
   def sitter_params
     params.require(:sitter).permit(:name, :rate)
