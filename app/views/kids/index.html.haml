@@ -1,8 +1,13 @@
+%h2 Kids List
 .col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
-  = link_to 'Add New Kid', new_kid_path, class: "btn btn-default"
+  = link_to 'Add New Kid', new_kid_path, class: "btn btn-default green"
+  %br
+  %br
 
-.col-lg8.col-md-8.col-sm-8.col-sm-offset-2.col-md-offset-2.col-lg-offset-2
+
   - @kids.each do |kid|
-    = link_to kid.name, kid_path(kid)
+    = link_to kid.name, kid_path(kid), class: "btn btn-default"
+    %br
+    %br
 
 

@@ -1,10 +1,22 @@
 = nested_form_for(@family) do |f|
 
+%h2 Add New Family
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+
   .panel.form_group
+  = form_for(@family) do |f|
     = f.label :name
     = f.text_field :name, class: "form-control"
 
+
   = f.fields_for :kids do |i|
+
+    %br
+    %br
+    %br
+    %br
+  / = f.fields_for :kids do |i|
+
     
     .form-inline
       = i.label :name
@@ -12,6 +24,7 @@
 
       = i.label :age
       = i.number_field :age
+
 
       = i.label :gender
       = i.text_field :gender
@@ -22,3 +35,8 @@
   = f.submit 'Save', class: "btn bt-default"
   %br
   %br
+
+  /     = i.label :gender
+  /     = i.text_field :gender
+    
+

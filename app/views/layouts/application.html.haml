@@ -44,3 +44,16 @@
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
 
 
+
+  .navbar.navbar-default
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %h1 The Sitter-Connection
+      %ul.nav.navbar-nav
+        %li= link_to "Sitters", sitters_path
+        %li= link_to "Families", families_path
+        %li= link_to "Sits", sits_path
+        %li= link_to "Kids", kids_path
+%br
+  .container-fluid
+    = yield
+
