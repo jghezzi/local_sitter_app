@@ -7,24 +7,20 @@
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-default
-      %a.navbar-brand{href: "/"} Local Sitters
-      .navbar-header
-        %button.navbar-toggle{"data-target" => "#collapse_menu", "data-toggle" => "collapse", type: "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
+      %a.navbar-brand.custom_title{href: "/"} The Sitter-Connection
+      %button.navbar-toggle{"data-target" => "#collapse_menu", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
       .navbar-collapse.collapse.navbar-responsive-collapse#collapse_menu
-        %ul.nav.navbar-nav
-          =link_to "Sitters", sitters_path
-          =link_to "Families", families_path
-          =link_to "Sits", sits_path
-          =link_to "Kids", kids_path
-          %button.btn.btn-primary.btn-md{"data-target" => "#myModal", "data-toggle" => "modal"}
+        .nav.navbar-nav.pad_me
+          =link_to "Sitters", sitters_path, class: "make_green pad_me"
+          =link_to "Families", families_path, class: "make_green pad_me"
+          =link_to "Sits", sits_path, class: "make_green pad_me"
+          =link_to "Kids", kids_path, class: "make_green pad_me"
+          %span.btn.btn-primary.btn-md.search_button{"data-target" => "#myModal", "data-toggle" => "modal"}
             Search Sitters
-  / Modal
- 
-/ Modal for editing piece's metadata.
 
 %br
 %br
@@ -42,18 +38,4 @@
         = render "sitters/search_form"
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-
-
-
-  .navbar.navbar-default
-    .navbar-collapse.collapse.navbar-responsive-collapse
-      %h1 The Sitter-Connection
-      %ul.nav.navbar-nav
-        %li= link_to "Sitters", sitters_path
-        %li= link_to "Families", families_path
-        %li= link_to "Sits", sits_path
-        %li= link_to "Kids", kids_path
-%br
-  / .container-fluid
-  /   = yield
 

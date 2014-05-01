@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   # You can have the root of your site routed with "root"
   root 'sits#index'
 
@@ -31,11 +30,7 @@ Rails.application.routes.draw do
   end
 
   resources :families
-
-
-
-
-
+  
   # Example resource route with options:
   #   resources :products do
   #     member do

@@ -3,6 +3,9 @@
 .col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
   .panel.form_group
     = form_for @new_sit, url: "/sits" do |s|
+      = s.label "Family"
+      = s.select :family_id, Family.all.collect { |f| [f.name, f.id] }
+      %br
       = s.label "Date of sit"
       = s.date_field :date, class: "form-control"
       %br
@@ -12,11 +15,7 @@
       = s.label "End Time"
       = s.time_field :end_time, class: "form-control"
       %br
-      = s.label "Family"
-      = s.text_field :family_id, class: "form-control"
-      %br
-      = s.label "Status"
-      = s.text_field :status, class: "form-control"
+      = s.hidden_field :status, value: "SUBMITTED"
 
       .col-lg-4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
       = s.submit "Add", class: "btn bt-default"

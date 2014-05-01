@@ -85,3 +85,41 @@ a.btn.btn-default.green:hover{
 	-o-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 	-ms-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 }
+
+.custom_title {
+	text-shadow: 1px 2px 2px #79B474;
+	margin-top: 8px;
+}
+
+.search_button {
+	border: 1px solid #CCCCCC;
+	width: 200px;
+	background-color: rgba(128, 207, 128, 0.5);
+	background: rgba(128, 207, 128, 0.5);
+	color: #000;
+}
+
+.search_button:hover {
+	transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+	-webkit-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+	-moz-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+	-o-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+	-ms-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+}
+
+.make_green {
+	color: #79b474;
+	
+}
+
+.navbar_nav {
+	padding-bottom: 20px;
+}
+
+.pad_me {
+	margin-right: 30px;
+}
+
+.first_pad {
+	margin-left:15px;
+}
