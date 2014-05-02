@@ -1,3 +1,3 @@
 = render 'form'
-
-= link_to 'Destroy', @family, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+	= link_to 'Delete Family', @family, :method => :delete, :data => { :confirm => "You're about to permanently delete a family from the database. Are you sure?" }, class: "btn btn-default green"
