@@ -1,6 +1,6 @@
 %h2 Sits List
 .col-lg6.col-md-6.col-sm-6.col-sm-offset-3.col-md-offset-3.col-lg-offset-3
-  = link_to 'Add New Sit', new_sit_path, class: "btn btn-default green"
+  = link_to 'Add New Sit', new_sit_path, class: "btn btn-default"
   %br
   %br
 
@@ -20,14 +20,16 @@
       End time:
       = s.end_time.strftime("%I:%M %p")
       %br
-      - fam = Family.find_by_id(s.family_id)
-      = fam.name unless fam.nil?
-      %br
       Status:
       = s.status
       %br
+
     = link_to 'Edit Sit', edit_sit_path(s.id), class: "btn btn-default", method: :get
     %br
-    = link_to 'Delete Sit', sit_path(s), class: "btn btn-default", method: :delete
+    = link_to 'Delete Sit', sit_path(s), class: "btn btn-default green", method: :delete
+    %br
+    -if s.status == 'SENT'
+      = link_to "Accept Sit", sitter_response_sit_path(s), class: "btn btn-default blue", method: :get
+    %br
     %br
     %br

@@ -1,6 +1,9 @@
-= form_for @sit, url: "/sitter_response/#{@sit.id}", method: :put do |f|
+= form_for @sit, url: sitter_update_sit_path, method: :put do |f|
 	- fam = Family.find(@sit.family_id)
         
+	= f.select :sitter_id, Sitter.all.collect { |s| [s.name, s.id] }
+	%br
+	%br
 	= f.label fam.name
 	%b Family
 	%br
@@ -8,10 +11,10 @@
 	= f.label "#{@sit.date}"
 	%br
 	= f.label "Start Time:"
-	= f.label "#{@sit.start_time}"
+	= f.label "#{@sit.start_time.strftime("%I:%M %p")}"
 	%br
 	= f.label "End Time:"
-	= f.label "#{@sit.end_time}"
+	= f.label "#{@sit.end_time.strftime("%I:%M %p")}"
 	%br
 	= f.hidden_field :status, value: "ACCEPTED"
 	= f.submit "Accept Sit"
