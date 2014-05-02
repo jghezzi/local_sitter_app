@@ -39,14 +39,14 @@ class SitsController < ApplicationController
 	end
 
 	#sitter edits sit request to accept
-	def sitter_response_to_sit_request
+	def sitter_response
 		@sit = Sit.find(params[:id])
 	end
 
 	#put / patch request to update table with sitter response
-	def sitter_update_to_sit_request
+	def sitter_update
 		@sit = Sit.find(params[:id])
-		if @sit.update_attributes (sit_params)
+		if @sit.update_attributes(sit_params)
 			redirect_to sits_path
 		end
 	end

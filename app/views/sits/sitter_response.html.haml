@@ -1,0 +1,17 @@
+= form_for @sit, url: "/sitter_response/#{@sit.id}", method: :put do |f|
+	- fam = Family.find(@sit.family_id)
+        
+	= f.label fam.name
+	%b Family
+	%br
+	= f.label "Date of Sit:"
+	= f.label "#{@sit.date}"
+	%br
+	= f.label "Start Time:"
+	= f.label "#{@sit.start_time}"
+	%br
+	= f.label "End Time:"
+	= f.label "#{@sit.end_time}"
+	%br
+	= f.hidden_field :status, value: "ACCEPTED"
+	= f.submit "Accept Sit"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428205820) do
+ActiveRecord::Schema.define(version: 20140502021633) do
 
   create_table "families", force: true do |t|
     t.string   "name"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140428205820) do
 
   create_table "sits", force: true do |t|
     t.date     "date"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.string   "status"
     t.integer  "family_id"
     t.integer  "sitter_id"
