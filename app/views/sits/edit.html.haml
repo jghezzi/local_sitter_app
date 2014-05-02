@@ -12,6 +12,6 @@
       = f.time_select :end_time, class: "form-control"
       %br
       = f.label "Status"
-      = f.text_field :status, class: "form-control"
+      = f.select :status, options_for_select(['SENT', 'WITHDRAWN']), class: "form-control"
       %br
       = f.submit "EDIT", class: "form-control"
