@@ -9,14 +9,13 @@ class Sitter < ActiveRecord::Base
     date = params[:date]
     name = params[:name]
     
-
     case 
     when date.present? && name.present?
       puts 'both'
     when date.present?
       puts "date"
     else
-      @sitters = Sitter.where(:name => name)
+      @sitters = Sitter.where("name LIKE ?", "%#{name}%")
     end
   end
 end

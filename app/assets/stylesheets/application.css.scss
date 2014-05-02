@@ -101,11 +101,15 @@ a.btn.btn-default.green:hover{
 }
 
 .search_button:hover {
+	border: 1px solid #CCCCCC;
+	background-color: rgba(128, 207, 128, 0.5);
+	background: rgba(128, 207, 128, 0.5);
 	transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 	-webkit-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 	-moz-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 	-o-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
 	-ms-transform: rotate(4deg) scale(1.0) skew(0deg) translate(0px);
+	color: black;
 }
 
 .make_green, hr {
@@ -123,4 +127,8 @@ a.btn.btn-default.green:hover{
 
 .first_pad {
 	margin-left:15px;
+}
+
+a:hover {
+	color: gray;
 }

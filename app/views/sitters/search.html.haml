@@ -1,9 +1,14 @@
-- if @sitters.present?
-  - @sitters.each do |s|
-    - if s.present?
-      = link_to s.name, sitter_path(s)
-    - else
-      %p= test
-      %p= There are no sitters yet!
-- else
-  No Sitters Found
+.col-lg-4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  .panel.panel-success
+    .panel-heading
+      Search Results
+    .panel-body
+      - if @sitters.present?
+        - @sitters.each do |s|
+          - if s.present?
+            = link_to s.name, sitter_path(s)
+          - else
+            %p= test
+            %p= There are no sitters yet!
+      - else
+        No Sitters Found
