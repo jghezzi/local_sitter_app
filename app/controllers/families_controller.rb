@@ -1,4 +1,5 @@
 class FamiliesController < ApplicationController
+  skip_before_action :ensure_current_sitter
 
   def index
     @families = Family.all

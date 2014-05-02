@@ -1,4 +1,5 @@
 class SitsController < ApplicationController
+	skip_filter :ensure_current_sitter
 	
 	def index
 		@sits = Sit.all

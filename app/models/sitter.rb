@@ -1,5 +1,6 @@
 class Sitter < ActiveRecord::Base
 	has_many :sits
+  belongs_to :user
 
   #change schema. add to schema to support this search
   #scope :sitters_available, (date) -> {where()}

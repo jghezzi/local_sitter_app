@@ -15,9 +15,14 @@ Rails.application.routes.draw do
 
   get "login" => "sessions#new"
   get "logout" => "sessions#destroy"
+  get "signup_family" => "users#signup_family"
+  get "signup_sitter" => "users#signup_sitter"
+
+  # get "family_login" => "session#family_new"
+  # get "family_logout" => "sessions#family_destroy"
 
   # You can have the root of your site routed with "root"
-  root 'users#new'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -35,7 +40,11 @@ Rails.application.routes.draw do
   end
 
   resources :families
-  resources :users
+  resources :users do
+    collection do
+      get :route_me
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   
   # Example resource route with options:
