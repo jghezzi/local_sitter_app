@@ -1,0 +1,28 @@
+.col-lg4.col-md-4.col-sm-4.col-sm-offset-4.col-md-offset-4.col-lg-offset-4
+  .panel
+    %h2 Sitter sign up!
+    %br
+    = form_for @new_user, url: users_path, method: :post do |f|
+      %br
+      .form_group
+        = f.label "Email:"
+        = f.email_field :email, class: "form-control"
+        %br
+        = f.label "Password"
+        = f.password_field :password, class: "form-control"
+        %br
+        = f.label "Password Confirmation"
+        = f.password_field :password_confirmation, class: "form-control"
+        %br
+        = f.hidden_field :role, value: "SITTER"
+
+        = f.fields_for :sitter do |i|
+
+          = i.label :name
+          = i.text_field :name, class: "form-control"
+          %br
+          = i.label :rate
+          = i.number_field :rate, class: "form-control"
+          %br
+    
+        = f.submit "Sign up"

@@ -1,4 +1,5 @@
 class SittersController < ApplicationController
+  skip_filter :ensure_current_sitter, only: [:show, :edit]
 
   def index
     @sitters = Sitter.all

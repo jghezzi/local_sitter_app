@@ -1,4 +1,5 @@
 class KidsController < ApplicationController
+  skip_filter :ensure_current_sitter
 
   #GET '/kids'
   def index

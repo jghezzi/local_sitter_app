@@ -21,7 +21,9 @@
           =link_to "Kids", kids_path, class: "make_green pad_me"
           %span.btn.btn-primary.btn-md.search_button{"data-target" => "#myModal", "data-toggle" => "modal"}
             Search Sitters
+
           - if current_user
+            = current_user.role
             = "Logged in as #{current_user.email}"
             = link_to "Log Out", logout_path
           - else
