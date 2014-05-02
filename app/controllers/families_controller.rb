@@ -28,18 +28,20 @@ class FamiliesController < ApplicationController
   def update
     @family = Family.find(params[:id])
     if @family.update_attributes(family_params)
-      redirect_to :action => 'show', :id => @family
+      redirect_to family_path(@family)
     else
-      @families = Family.find(:all)
-      render :action => 'edit'
+      render edit_family_path
     end
   end
 
   def destroy
-    Family.find(params[:id]).destroy
-    redirect_to families_path
+    @family = Family.find(params[:id])
+    if @family.destroy
+      redirect_to families_path
+    else
+      redirect_to family_path(@family)
+    end
   end
-
 
   private
 

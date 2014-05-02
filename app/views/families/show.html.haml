@@ -5,8 +5,13 @@
     =@family.address
     / need to list kids associated with family
     / maybe list history of sits & reviews by sitters
+  
   %br
-  = link_to 'Edit Family', edit_family_path(@family.id), class: "btn btn-default", method: :get
+  = link_to 'Edit Family', edit_family_path(@family), class: "btn btn-default green", method: :get
+  %br
+  %br
+  = link_to 'Delete Family', family_path(@family), class: "btn btn-default green", method: :delete
+
   %br
   %br
     

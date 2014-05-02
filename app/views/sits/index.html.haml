@@ -5,28 +5,26 @@
   %br
 
   - @sits.each do |s|
-    .col-lg12.col-md-12.col-sm12
-      .col-lg8.col-md-8.col-sm-8.green-border
-        Date of sit:
-        = s.date
-        %br
-        Start time:
-        = s.start_time
-        %br
-        End time:
-        = s.end_time
-        %br
-        Family Name:
-        - fam = Family.find(s.family_id)
-        = fam.name
-        %br
-        Status:
-        = s.status
-        %br
-      .col-lg4.col-md-4.col-sm-4
-        = link_to 'Edit Sit', edit_sit_path(s.id), class: "btn btn-default", method: :get
-        %br
-        %br
-        = link_to 'Delete Sit', sit_path(s), class: "btn btn-default", method: :delete
+    .green-border
+      Date of sit:
+      = s.date
+      %br
+      Start time:
+      = s.start_time
+      %br
+      End time:
+      = s.end_time
+      %br
+      - fam = Family.find_by_id(s.family_id)
+      = fam.name unless fam.nil?
+      %br
+      Status:
+      = s.status
+      %br
+    %br
+    = link_to 'Edit Sit', edit_sit_path(s.id), class: "btn btn-default", method: :get
+
+    = link_to 'Delete Sit', sit_path(s), class: "btn btn-default", method: :delete
+
     %br
     %br
