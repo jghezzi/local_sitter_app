@@ -25,10 +25,26 @@ class FamiliesController < ApplicationController
     end
   end
 
+  def update
+    @family = Family.find(params[:id])
+    if @family.update_attributes(family_params)
+      redirect_to :action => 'show', :id => @family
+    else
+      @families = Family.find(:all)
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    Family.find(params[:id]).destroy
+    redirect_to families_path
+  end
+
+
   private
 
   def family_params
-    params.require(:family).permit(:name, :kids_attributes => [ :id, :name, :age, :gender, :comments ])
+    params.require(:family).permit(:name, :kids_attributes => [ :id, :name, :age, :gender, :comments, :_destroy ])
   end
 
 end

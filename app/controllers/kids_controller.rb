@@ -43,7 +43,9 @@ class KidsController < ApplicationController
     redirect_to kids_path
   end
 
-  #PATCH "/kids/:id/change_kid"
+
+
+  # PATCH "/kids/:id/change_kid"
   def change_kid
     @kid = Kid.find(params[:id])
     @kid.update_attributes
