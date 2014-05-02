@@ -14,8 +14,8 @@
       End time:
       = s.end_time
       %br
-        - fam = Family.find(s.family_id)
-        = fam.name
+      - fam = Family.find_by_id(s.family_id)
+      = fam.name unless fam.nil?
       %br
       Status:
       = s.status
