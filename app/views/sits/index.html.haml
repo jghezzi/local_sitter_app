@@ -29,7 +29,7 @@
     = link_to 'Delete Sit', sit_path(s), class: "btn btn-default green", method: :delete
     %br
     -if s.status == 'SENT'
-      = link_to "Accept Sit", "/sits/sitter_response/#{s.id}/edit", class: "btn btn-default", method: :get
+      = link_to "Accept Sit", sitter_response_sit_path(s), class: "btn btn-default blue", method: :get
     %br
     %br
     %br

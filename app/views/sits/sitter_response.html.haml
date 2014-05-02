@@ -1,4 +1,4 @@
-= form_for @sit, url: "/sitter_response/#{@sit.id}", method: :put do |f|
+= form_for @sit, url: sitter_update_sit_path, method: :put do |f|
 	- fam = Family.find(@sit.family_id)
         
 	= f.select :sitter_id, Sitter.all.collect { |s| [s.name, s.id] }
