@@ -2,13 +2,17 @@ Rails.application.routes.draw do
 
   get '/sits/sitter_response/:id/edit' => 'sits#sitter_response'
   put 'sitter_response/:id' => 'sits#sitter_update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :sits
 
+  get "login" => "sessions#new"
+  get "logout" => "sessions#destroy"
+
   # You can have the root of your site routed with "root"
-  root 'sits#index'
+  root 'users#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -26,6 +30,8 @@ Rails.application.routes.draw do
   end
 
   resources :families
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   # Example resource route with options:
   #   resources :products do

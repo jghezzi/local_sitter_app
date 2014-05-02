@@ -21,10 +21,18 @@
           =link_to "Kids", kids_path, class: "make_green pad_me"
           %span.btn.btn-primary.btn-md.search_button{"data-target" => "#myModal", "data-toggle" => "modal"}
             Search Sitters
+          - if current_user
+            = "Logged in as #{current_user.email}"
+            = link_to "Log Out", logout_path
+          - else
+            = link_to "Log In", login_path
+  
 
-%br
-%br
-%br
+
+
+- flash.each do |key, msg|
+  = content_tag :div, msg, :id => "flash_#{key}", :class => "#{flash_class(key)}"
+
 #primary-content
   = yield
 
@@ -38,8 +46,4 @@
         = render "sitters/search_form"
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-          
-
-
-
 

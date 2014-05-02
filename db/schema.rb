@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140502021633) do
 
+
   create_table "families", force: true do |t|
     t.string   "name"
     t.string   "address"
@@ -44,6 +45,13 @@ ActiveRecord::Schema.define(version: 20140502021633) do
   create_table "sitters", force: true do |t|
     t.string   "name"
     t.float    "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
