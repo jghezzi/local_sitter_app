@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140502021633) do
 
-
   create_table "families", force: true do |t|
     t.string   "name"
     t.string   "address"

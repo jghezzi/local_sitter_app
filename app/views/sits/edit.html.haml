@@ -6,10 +6,10 @@
       = f.date_field :date, class: "form-control"
       %br
       = f.label "Start Time"
-      = f.time_select :start_time, class: "form-control"
+      = f.time_field :start_time, class: "form-control"
       %br
       = f.label "End Time"
-      = f.time_select :end_time, class: "form-control"
+      = f.time_field :end_time, class: "form-control"
       %br
       = f.label "Status"
       = f.select :status, options_for_select(['SENT', 'WITHDRAWN']), class: "form-control"
