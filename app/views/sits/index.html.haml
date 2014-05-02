@@ -3,6 +3,7 @@
   = link_to 'Add New Sit', new_sit_path, class: "btn btn-default green"
   %br
   %br
+
   - @sits.each do |s|
     .green-border
       Date of sit:
@@ -22,7 +23,8 @@
       %br
     %br
     = link_to 'Edit Sit', edit_sit_path(s.id), class: "btn btn-default", method: :get
-    %br
-    %br
+
     = link_to 'Delete Sit', sit_path(s), class: "btn btn-default", method: :delete
 
+    %br
+    %br
